@@ -120,4 +120,41 @@
             active.classList.add('nav-active');
         }
     });
+
+    /* ── Mobile Hamburger Menu ───────────────────────────────────── */
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when an item is clicked
+        const navItemsList = navMenu.querySelectorAll('.nav-item');
+        navItemsList.forEach(item => {
+            item.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    }
+
+    /* ── Sticky Navbar Background on Scroll ──────────────────────── */
+    const navbar = document.getElementById('navbar');
+    if (navbar) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Initial check on load
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        }
+    }
 })();

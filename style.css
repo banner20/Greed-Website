@@ -51,12 +51,10 @@ body {
 @keyframes page-in {
   from {
     opacity: 0;
-    transform: translateY(6px);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
@@ -101,16 +99,27 @@ body.page-exit {
   /* Center the wrapper */
   align-items: center;
   width: 100%;
-  z-index: 100;
-  position: absolute;
-  top: 28px;
+  z-index: 999;
+  position: fixed;
+  top: 0;
   left: 0;
+  padding-top: 28px;
+  padding-bottom: 15px;
+  transition: background 0.3s ease, padding 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  padding-top: 15px;
+  border-bottom: 1px solid var(--greed-black);
 }
 
 .logo {
   position: absolute;
   left: 33px;
-  top: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .logo img {
@@ -118,6 +127,28 @@ body.page-exit {
   /* Restored size */
   width: auto;
   display: block;
+}
+
+/* Hamburger Menu (Hidden on Desktop) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 32px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+  padding: 0;
+}
+
+.hamburger .bar {
+  height: 3px;
+  width: 100%;
+  background-color: var(--greed-black);
+  border-radius: 10px;
+  transition: all 0.3s ease;
 }
 
 /* ——————————————————————— NAVBAR ——————————————————————— */
@@ -349,7 +380,7 @@ body.page-exit {
   opacity: 0;
   will-change: transform, opacity;
   /* Post saturation boost — increase value for more vivid colours */
-  filter: saturate(1.4);
+  /* filter: saturate(1.4); */
 }
 
 /* Bottom White Gradient Overlay */
@@ -358,7 +389,7 @@ body.page-exit {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 30%;
+  height: 15%;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 100%);
   pointer-events: none;
   z-index: 60;
@@ -525,21 +556,88 @@ body.page-exit {
 
   /* ... existing nav mobile ... */
   .navbar {
-    top: 10px;
-    height: auto;
-    flex-direction: column;
-    padding-bottom: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .logo {
     position: relative;
     left: auto;
-    margin-bottom: 10px;
+    transform: none;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+
+  .hamburger {
+    display: flex;
   }
 
   .center-nav-wrapper {
-    flex-wrap: wrap;
+    position: fixed;
+    top: -100vh;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--greed-green);
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    gap: 40px;
+    transition: top 0.4s ease-in-out;
+    z-index: 1000;
+  }
+
+  .center-nav-wrapper.active {
+    top: 0;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    background: transparent;
+    height: auto;
+    padding: 0;
+    gap: 20px;
+  }
+
+  .nav-item {
+    font-size: 36px;
+    color: var(--greed-black);
+    height: auto;
+  }
+
+  .nav-item.nav-active,
+  .nav-item:hover {
+    color: white;
+  }
+
+  .nav-pill {
+    display: none;
+  }
+
+  .shop-btn {
+    background-color: var(--greed-black);
+    color: var(--greed-green);
+    font-size: 28px;
+    padding: 15px 40px;
+    height: auto;
+  }
+
+  /* Hamburger Animation */
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(10.5px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-10.5px) rotate(-45deg);
   }
 
   .hero-content {
@@ -1122,23 +1220,98 @@ body.page-exit {
 }
 
 .about-card {
-  background-color: var(--greed-green);
-  border: 3px solid var(--greed-black);
-  border-radius: 20px;
-  padding: 60px 70px;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 40px 0;
   max-width: 1440px;
   margin: 0 auto;
-  box-shadow: 5px 5px 0 var(--greed-black);
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 100px;
+  position: relative;
+}
+
+.about-mascot {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-mascot img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
 }
 
 .about-content {
+  flex: 1.2;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  text-align: right;
-  gap: 20px;
-  max-width: 650px;
-  margin-left: auto;
+  align-items: flex-start;
+  text-align: left;
+  gap: 32px;
+}
+
+.about-content .section-title {
+  margin: 0;
+  font-size: 100px;
+  letter-spacing: -3px;
+}
+
+.about-paragraph {
+  font-family: 'AstyCF', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--greed-black);
+  margin: 0;
+  max-width: 600px;
+}
+
+/* Specific styling for mobile/tablet */
+@media (max-width: 1200px) {
+  .about-card {
+    padding: 60px;
+    gap: 40px;
+  }
+
+  .about-content .section-title {
+    font-size: 80px;
+  }
+
+  .about-paragraph {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .about-card {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 60px 40px;
+  }
+
+  .about-mascot {
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 20px;
+  }
+
+  .about-content {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .about-content .section-title {
+    font-size: 64px;
+  }
 }
 
 /* 
@@ -1261,11 +1434,18 @@ body.page-exit {
   .loyalty-section,
   .about-section,
   .order-section {
-    padding: 60px 5%;
+    padding: 60px 4%;
   }
 
-  .section-title {
-    font-size: 38px;
+  .section-title,
+  .menu-title {
+    font-size: 32px;
+  }
+
+  .view-menu-btn,
+  .big-order-btn {
+    font-size: 18px;
+    padding: 14px 24px;
   }
 }
 
@@ -1488,5 +1668,117 @@ body.page-exit {
 
   .ps-body {
     font-size: 16px;
+  }
+}
+
+/* 
+  ------------------------------------------------
+  GLOBAL MOBILE RESPONSIVENESS (MAX-WIDTH: 768px)
+  ------------------------------------------------
+*/
+@media (max-width: 768px) {
+
+  /* Hero Section */
+  .headline {
+    font-size: 42px;
+  }
+
+  .subtext {
+    font-size: 16px;
+    margin-top: 1.5rem;
+  }
+
+  #cup-canvas {
+    width: 200px !important;
+    height: 320px !important;
+    bottom: -80px !important;
+    transform: translateX(-50%) translateY(0);
+    z-index: 1 !important;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 10;
+  }
+
+  .ticker-strip {
+    height: 40px;
+    top: 100px;
+  }
+
+  .ticker-text,
+  .ticker-separator {
+    font-size: 24px;
+  }
+
+  /* Locations Section */
+  .locations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Loyalty Section */
+  .loyalty-container {
+    flex-direction: column;
+    gap: 30px;
+    padding-bottom: 20px;
+  }
+
+  .loyalty-visuals {
+    height: 380px !important;
+    min-height: 380px !important;
+    width: 100%;
+    position: relative;
+    overflow: hidden !important;
+  }
+
+  .loyalty-card {
+    width: 320px !important;
+    height: 200px !important;
+  }
+
+  .card-dark {
+    left: 50% !important;
+    transform: translateX(-50%) rotate(-4deg) !important;
+    top: 20px !important;
+  }
+
+  .card-green {
+    left: 50% !important;
+    transform: translateX(-50%) rotate(4deg) !important;
+    top: 80px !important;
+  }
+
+  /* Features Section */
+  .features-cluster {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    padding: 0 10px;
+  }
+
+  .feature-card p {
+    font-size: 16px;
+    white-space: nowrap;
+    margin: 0;
+  }
+
+  .feature-card {
+    height: auto;
+    padding: 8px 16px;
+    width: auto !important;
+    max-width: none;
+    border: 2px solid var(--greed-black);
+    background-color: var(--greed-green);
+    /* Ensure visibility */
+    border-radius: 8px;
+    /* Slightly rounded for label feel */
+    box-shadow: 2px 2px 0px var(--greed-black);
+    /* Card pop effect */
+  }
+
+  /* Shop Placeholders */
+  .shop-placeholder {
+    aspect-ratio: 1/1;
   }
 }
