@@ -125,16 +125,9 @@
 /* ── CATEGORY RAIL ──────────────────────────────────────────── */
 .mn-rail {
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    flex-wrap: wrap;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     gap: 0;
-}
-
-.mn-rail::-webkit-scrollbar {
-    display: none;
 }
 
 .mn-tab {
@@ -1165,17 +1158,8 @@
     }
 
     .mn-chips {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        padding-bottom: 4px;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
         width: 100%;
         min-width: 100%;
-    }
-
-    .mn-chips::-webkit-scrollbar {
-        display: none;
     }
 
     .mn-sort {
