@@ -1153,20 +1153,94 @@
 
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+
+    /* Allow the bar items to wrap, but force chips strictly on top */
     .mn-bar {
-        padding: 8px 5%;
+        padding: 12px 5%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .mn-chips {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 4px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .mn-chips::-webkit-scrollbar {
+        display: none;
+    }
+
+    .mn-sort {
+        margin-right: auto;
+    }
+
+    /* Fix Cards View to 2 columns on tablet */
+    .mn-grid--card {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px !important;
+        padding-top: 24px !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .mn-hero::before {
+        font-size: clamp(100px, 20vw, 200px);
+        /* Reduce watermark size */
+    }
+
+    .mn-hero__headline {
+        font-size: clamp(48px, 12vw, 80px);
+        /* Reduce main headline */
+        letter-spacing: -1.5px;
+    }
+
+    .mn-hero {
+        min-height: 40vh;
+        padding: 30px 5% 40px;
     }
 
     .mn-main {
         padding: 0 4% 60px;
     }
 
+    /* Fix Cards View to 1 column on small mobile */
+    .mn-grid--card {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+
     .mn-card__body {
-        padding: 18px 20px;
+        padding: 16px 18px !important;
     }
 
     .mn-card__name {
-        font-size: 28px;
+        font-size: 24px;
+    }
+
+    .mn-grid--list .mn-card__price {
+        font-size: 20px;
+    }
+
+    .mn-grid--list .mn-card__name {
+        font-size: 16px;
+    }
+
+    /* Ensure drawer doesn't overfill screen */
+    .mn-drawer__body {
+        padding: 24px 20px 30px;
+    }
+
+    .mn-drawer__price {
+        font-size: 32px;
     }
 }
