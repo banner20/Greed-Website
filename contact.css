@@ -1,0 +1,307 @@
+/* ══════════════════════════════════════════════════════════════════
+   CONTACT PAGE — contact.css
+   All styles scoped to .contact-page or ct- prefix
+   ══════════════════════════════════════════════════════════════════ */
+
+/* ─── Navbar override — static position on contact page ─────────── */
+.navbar--static {
+    position: relative;
+    padding: 24px 48px;
+    border-bottom: 1.5px solid #000;
+    background: #fff;
+    z-index: 10;
+}
+
+/* ─── Hero ───────────────────────────────────────────────────────── */
+.ct-hero {
+    padding: 100px 48px 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.ct-hero__eyebrow {
+    font-family: 'AstyCF', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 24px;
+}
+
+.ct-hero__headline {
+    font-family: 'Okkult', sans-serif;
+    font-size: clamp(72px, 10vw, 140px);
+    line-height: 0.95;
+    text-transform: uppercase;
+    color: #000;
+    margin-bottom: 32px;
+}
+
+.ct-hero__sub {
+    font-family: 'AstyCF', sans-serif;
+    font-size: clamp(16px, 1.5vw, 20px);
+    line-height: 1.6;
+    color: #333;
+    max-width: 520px;
+}
+
+.ct-hero__divider {
+    width: 100%;
+    height: 1.5px;
+    background: #000;
+    margin-top: 80px;
+}
+
+/* ─── Sections ───────────────────────────────────────────────────── */
+.ct-section {
+    padding: 96px 48px;
+}
+
+.ct-section--alt {
+    background: #f5f5f5;
+}
+
+.ct-section__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 80px;
+    align-items: start;
+}
+
+/* Centered variant (bulk, careers) */
+.ct-section__inner--centered {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    grid-template-columns: unset;
+}
+
+/* ─── Section header (left column) ──────────────────────────────── */
+.ct-label {
+    font-family: 'AstyCF', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #aaa;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.ct-section__title {
+    font-family: 'Okkult', sans-serif;
+    font-size: clamp(42px, 5vw, 72px);
+    text-transform: uppercase;
+    line-height: 0.95;
+    color: #000;
+    margin-bottom: 28px;
+}
+
+.ct-section__copy {
+    font-family: 'AstyCF', sans-serif;
+    font-size: 15px;
+    line-height: 1.75;
+    color: #444;
+    max-width: 380px;
+}
+
+.ct-section__copy--center {
+    max-width: 560px;
+}
+
+/* Contact info links */
+.ct-contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 36px;
+}
+
+.ct-contact-link {
+    font-family: 'AstyCF', sans-serif;
+    font-size: 16px;
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1.5px solid #000;
+    padding-bottom: 2px;
+    width: fit-content;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.ct-contact-link:hover {
+    color: var(--greed-green);
+    border-color: var(--greed-green);
+}
+
+/* ─── Forms ──────────────────────────────────────────────────────── */
+.ct-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ct-form__row {
+    display: grid;
+    gap: 20px;
+}
+
+.ct-form__row--2 {
+    grid-template-columns: 1fr 1fr;
+}
+
+.ct-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ct-field--full {
+    grid-column: 1 / -1;
+}
+
+.ct-field label {
+    font-family: 'AstyCF', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #666;
+}
+
+.ct-optional {
+    text-transform: none;
+    letter-spacing: 0;
+    color: #aaa;
+    font-size: 11px;
+}
+
+.ct-field input,
+.ct-field select,
+.ct-field textarea {
+    font-family: 'AstyCF', sans-serif;
+    font-size: 15px;
+    color: #000;
+    background: #fff;
+    border: 1.5px solid #d0d0d0;
+    border-radius: 0;
+    padding: 14px 16px;
+    outline: none;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+    appearance: none;
+    resize: vertical;
+}
+
+.ct-section--alt .ct-field input,
+.ct-section--alt .ct-field select,
+.ct-section--alt .ct-field textarea {
+    background: #fff;
+}
+
+.ct-field input::placeholder,
+.ct-field textarea::placeholder {
+    color: #bbb;
+}
+
+.ct-field input:focus,
+.ct-field select:focus,
+.ct-field textarea:focus {
+    border-color: #000;
+}
+
+/* Custom select arrow */
+.ct-field select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23000' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 44px;
+}
+
+/* ─── Buttons ────────────────────────────────────────────────────── */
+.ct-btn {
+    font-family: 'Okkult', sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 16px 40px;
+    border: 2px solid #000;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.2s, color 0.2s;
+    width: fit-content;
+    margin-top: 8px;
+}
+
+.ct-btn--primary {
+    background: #000;
+    color: var(--greed-green);
+}
+
+.ct-btn--primary:hover {
+    background: var(--greed-green);
+    color: #000;
+    border-color: var(--greed-green);
+}
+
+.ct-btn--outline {
+    background: transparent;
+    color: #000;
+}
+
+.ct-btn--outline:hover {
+    background: #000;
+    color: var(--greed-green);
+}
+
+/* ─── Bulk section — green accent bar ───────────────────────────── */
+.ct-bulk {
+    border-top: 6px solid var(--greed-green);
+}
+
+/* ─── Footer ─────────────────────────────────────────────────────── */
+.ct-footer {
+    border-top: 1.5px solid #000;
+    padding: 32px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'AstyCF', sans-serif;
+    font-size: 13px;
+    color: #666;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────── */
+@media (max-width: 860px) {
+    .ct-hero {
+        padding: 64px 24px 56px;
+    }
+
+    .ct-section {
+        padding: 64px 24px;
+    }
+
+    .ct-section__inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .ct-form__row--2 {
+        grid-template-columns: 1fr;
+    }
+
+    .ct-footer {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+        padding: 24px;
+    }
+
+    .navbar--static {
+        padding: 20px 24px;
+    }
+}

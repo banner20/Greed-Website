@@ -1,0 +1,906 @@
+/* ══════════════════════════════════════════════════════════════════
+   SHOP PAGE — shop.css
+   ══════════════════════════════════════════════════════════════════ */
+
+/* ── Shared page baseline ──────────────────────────────────────── */
+.shop-page .navbar--static {
+    background: #fff;
+    border-bottom: 1.5px solid #000;
+}
+
+/* ── HERO ─────────────────────────────────────────────────────── */
+.sh-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 92vh;
+    padding: 80px 60px 0;
+    gap: 40px;
+    align-items: center;
+    overflow: hidden;
+}
+
+.sh-hero__eyebrow {
+    font-family: 'AstyCF', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.sh-hero__headline {
+    font-family: 'Okkult', sans-serif;
+    font-size: clamp(80px, 10vw, 148px);
+    line-height: 0.88;
+    text-transform: uppercase;
+    color: #000;
+    margin-bottom: 32px;
+}
+
+.sh-hero__headline--line {
+    display: block;
+    line-height: 0.88;
+    margin: 0;
+    padding: 0;
+}
+
+.sh-hero__headline--green {
+    color: var(--greed-green);
+    display: block;
+    line-height: 0.88;
+    margin: 0;
+    padding: 0;
+}
+
+.sh-hero__sub {
+    font-family: 'AstyCF', sans-serif;
+    font-size: clamp(15px, 1.5vw, 18px);
+    line-height: 1.65;
+    color: #444;
+    max-width: 440px;
+    margin-bottom: 40px;
+}
+
+.sh-hero__ctas {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+/* Hero visual — stacked product cards */
+.sh-hero__visual {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 32px;
+}
+
+.sh-hero__card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 36px;
+    border: 1.5px solid #000;
+    cursor: default;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.sh-hero__card:hover {
+    transform: translateX(-6px);
+}
+
+.sh-hero__card--1 {
+    background: var(--greed-green);
+}
+
+.sh-hero__card--2 {
+    background: #111;
+    color: var(--greed-green);
+    border-color: #111;
+}
+
+.sh-hero__card--3 {
+    background: #f0f0f0;
+}
+
+.sh-hero__card--4 {
+    background: #e8d9b8;
+}
+
+.sh-hero__card-label {
+    font-family: 'Okkult', sans-serif;
+    font-size: clamp(24px, 2.5vw, 36px);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.sh-hero__card--2 .sh-hero__card-label {
+    color: var(--greed-green);
+}
+
+.sh-hero__card-weight {
+    font-family: 'AstyCF', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    opacity: 0.6;
+}
+
+.sh-hero__card--2 .sh-hero__card-weight {
+    opacity: 0.5;
+    color: #fff;
+}
+
+/* ── Buttons ──────────────────────────────────────────────────── */
+.sh-btn {
+    font-family: 'Okkult', sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 16px 36px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    border: 2px solid #000;
+}
+
+.sh-btn--primary {
+    background: #000;
+    color: var(--greed-green);
+}
+
+.sh-btn--primary:hover {
+    background: var(--greed-green);
+    color: #000;
+    border-color: var(--greed-green);
+}
+
+.sh-btn--outline {
+    background: transparent;
+    color: #000;
+}
+
+.sh-btn--outline:hover {
+    background: #000;
+    color: var(--greed-green);
+}
+
+.sh-btn--cta {
+    background: transparent;
+    color: #000;
+    border: 2px solid #000;
+    font-size: 20px;
+    padding: 20px 52px;
+}
+
+.sh-btn--cta:hover {
+    background: #000;
+    color: var(--greed-green);
+    border-color: #000;
+}
+
+/* ── Category Strip ───────────────────────────────────────────── */
+.sh-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1.5px solid #000;
+    border-bottom: 1.5px solid #000;
+}
+
+.sh-strip__item {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 28px 60px;
+    text-decoration: none;
+    color: #000;
+    transition: background 0.2s;
+    border-right: 1.5px solid #000;
+}
+
+.sh-strip__item:last-child {
+    border-right: none;
+}
+
+.sh-strip__item:hover {
+    background: var(--greed-green);
+}
+
+.sh-strip__num {
+    font-family: 'AstyCF', sans-serif;
+    font-size: 12px;
+    color: #aaa;
+    letter-spacing: 0.15em;
+}
+
+.sh-strip__label {
+    font-family: 'Okkult', sans-serif;
+    font-size: 28px;
+    text-transform: uppercase;
+    flex: 1;
+}
+
+.sh-strip__count {
+    font-family: 'AstyCF', sans-serif;
+    font-size: 13px;
+    color: #888;
+}
+
+.sh-strip__arrow {
+    font-size: 24px;
+    transition: transform 0.2s;
+}
+
+.sh-strip__item:hover .sh-strip__arrow {
+    transform: translateX(6px);
+}
+
+/* ── Product Sections ─────────────────────────────────────────── */
+.sh-section {
+    padding: 96px 60px;
+    background: #f7f7f7;
+}
+
+.sh-section--white {
+    background: #fff;
+}
+
+.sh-section__header {
+    margin-bottom: 56px;
+    max-width: 700px;
+}
+
+.sh-section__meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.sh-section__num {
+    font-family: 'AstyCF', sans-serif;
+    font-size: 12px;
+    color: #aaa;
+    letter-spacing: 0.2em;
+}
+
+.sh-section__tag {
+    font-family: 'AstyCF', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #888;
+    border: 1px solid #ccc;
+    padding: 4px 12px;
+}
+
+.sh-section__title {
+    font-family: 'Okkult', sans-serif;
+    font-size: clamp(56px, 6vw, 96px);
+    text-transform: uppercase;
+    line-height: 0.92;
+    color: #000;
+    margin-bottom: 24px;
+}
+
+.sh-section__sub {
+    font-family: 'AstyCF', sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: #555;
+}
+
+/* ── Product Grid ─────────────────────────────────────────────── */
+.sh-grid {
+    display: grid;
+    gap: 2px;
+}
+
+.sh-grid--4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.sh-grid--merch {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* ── Product Card ─────────────────────────────────────────────── */
+.sh-product {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s;
+}
+
+.sh-section--white .sh-product {
+    background: #f7f7f7;
+}
+
+.sh-product:hover {
+    transform: translateY(-4px);
+}
+
+/* Product image area — the CSS bag/illustration */
+.sh-product__img {
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.sh-product--tall .sh-product__img {
+    height: 320px;
+}
+
+.sh-product__img--kraft {
+    background: #e8d9b8;
+}
+
+.sh-product__img--dark {
+    background: #1a1a1a;
+}
+
+.sh-product__img--light {
+    background: #f0ece3;
+}
+
+.sh-product__img--green {
+    background: var(--greed-green);
+}
+
+.sh-product__img--tee {
+    background: #1a1a1a;
+}
+
+.sh-product__img--tote {
+    background: #e8ddbf;
+}
+
+.sh-product__img--mug {
+    background: #f0f0f0;
+}
+
+.sh-product__img--cap {
+    background: #111;
+}
+
+/* ── CSS Coffee Bag illustration ─────────────────────────────── */
+.sh-product__bag {
+    width: 96px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.sh-product__bag-valve {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.3);
+    margin-bottom: 8px;
+    margin-left: auto;
+    margin-right: 14px;
+}
+
+.sh-product__img--dark .sh-product__bag-valve {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.sh-product__bag-label {
+    width: 90px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.35);
+    border: 1.5px solid rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+
+.sh-product__img--dark .sh-product__bag-label {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.sh-product__img--green .sh-product__bag-label {
+    background: rgba(0, 0, 0, 0.12);
+    border-color: rgba(0, 0, 0, 0.18);
+}
+
+.sh-product__bag-label span {
+    font-family: 'Okkult', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.sh-product__bag-label--light span {
+    color: var(--greed-green);
+}
+
+.sh-product__img--green .sh-product__bag-label span {
+    color: #000;
+}
+
+/* ── CSS Merch illustrations ─────────────────────────────────── */
+.sh-merch-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* T-shirt */
+.sh-tee {
+    position: relative;
+    width: 140px;
+    height: 150px;
+}
+
+.sh-tee__body {
+    width: 140px;
+    height: 140px;
+    background: #111;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    clip-path: polygon(30% 0%, 70% 0%, 100% 15%, 100% 100%, 0% 100%, 0% 15%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sh-tee__text {
+    font-family: 'Okkult', sans-serif;
+    font-size: 22px;
+    color: var(--greed-green);
+    text-transform: lowercase;
+    margin-top: 20px;
+}
+
+/* Tote */
+.sh-tote {
+    position: relative;
+    width: 110px;
+    height: 140px;
+}
+
+.sh-tote__handle {
+    position: absolute;
+    top: -18px;
+    width: 30px;
+    height: 28px;
+    border: 3px solid #6b5d3f;
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+}
+
+.sh-tote__handle--l {
+    left: 16px;
+}
+
+.sh-tote__handle--r {
+    right: 16px;
+}
+
+.sh-tote__body {
+    width: 110px;
+    height: 130px;
+    background: #d4c4a0;
+    border: 2px solid #b0a080;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.sh-tote__text {
+    font-family: 'Okkult', sans-serif;
+    font-size: 20px;
+    color: #2a1f0a;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+/* Mug */
+.sh-mug {
+    position: relative;
+    width: 110px;
+    height: 120px;
+}
+
+.sh-mug__body {
+    width: 100px;
+    height: 110px;
+    background: #222;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.sh-mug__handle {
+    position: absolute;
+    right: -22px;
+    top: 28px;
+    width: 24px;
+    height: 48px;
+    border: 5px solid #222;
+    border-left: none;
+    border-radius: 0 10px 10px 0;
+}
+
+.sh-mug__text {
+    font-family: 'Okkult', sans-serif;
+    font-size: 18px;
+    color: var(--greed-green);
+    text-transform: lowercase;
+}
+
+/* Cap */
+.sh-cap {
+    position: relative;
+    width: 130px;
+    height: 90px;
+}
+
+.sh-cap__crown {
+    width: 120px;
+    height: 70px;
+    background: #1a1a1a;
+    border-radius: 30px 30px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.sh-cap__brim {
+    width: 140px;
+    height: 14px;
+    background: #111;
+    border-radius: 0 0 8px 8px;
+    margin: 0 auto;
+}
+
+.sh-cap__text {
+    font-family: 'Okkult', sans-serif;
+    font-size: 15px;
+    color: var(--greed-green);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 10px;
+}
+
+/* ── Product Info Panel ──────────────────────────────────────── */
+.sh-product__info {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.sh-product__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.sh-product__name {
+    font-family: 'Okkult', sans-serif;
+    font-size: 22px;
+    text-transform: uppercase;
+    color: #000;
+    line-height: 1.1;
+}
+
+.sh-product__badge {
+    font-family: 'AstyCF', sans-serif;
+    font-size: 11px;
+    background: var(--greed-green);
+    color: #000;
+    padding: 3px 9px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.sh-product__badge--new {
+    background: #000;
+    color: var(--greed-green);
+}
+
+.sh-product__desc {
+    font-family: 'AstyCF', sans-serif;
+    font-size: 14px;
+    line-height: 1.65;
+    color: #555;
+    flex: 1;
+}
+
+.sh-product__meta {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.sh-product__weight,
+.sh-product__roast {
+    font-family: 'AstyCF', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #888;
+}
+
+.sh-product__weight::after {
+    content: '·';
+    margin-left: 10px;
+    color: #ccc;
+}
+
+.sh-product__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 12px;
+    border-top: 1px solid #eee;
+    margin-top: auto;
+}
+
+.sh-product__price {
+    font-family: 'Okkult', sans-serif;
+    font-size: 26px;
+    color: #000;
+}
+
+.sh-add-btn {
+    font-family: 'Okkult', sans-serif;
+    font-size: 17px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: #000;
+    color: var(--greed-green);
+    border: none;
+    padding: 13px 22px;
+    cursor: pointer;
+    transition: background 0.18s, color 0.18s;
+}
+
+.sh-add-btn:hover {
+    background: var(--greed-green);
+    color: #000;
+}
+
+/* ── Quality Statement ───────────────────────────────────────── */
+.sh-statement {
+    background: #000;
+    color: #fff;
+    padding: 100px 60px;
+}
+
+.sh-statement__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+.sh-statement__eyebrow {
+    font-family: 'AstyCF', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: #555;
+    margin-bottom: 28px;
+}
+
+.sh-statement__headline {
+    font-family: 'Okkult', sans-serif;
+    font-size: clamp(52px, 5vw, 80px);
+    text-transform: uppercase;
+    line-height: 0.95;
+    color: #fff;
+}
+
+.sh-statement__body {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-top: 48px;
+}
+
+.sh-statement__body p {
+    font-family: 'AstyCF', sans-serif;
+    font-size: 17px;
+    line-height: 1.75;
+    color: #888;
+}
+
+.sh-statement__stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 16px;
+    padding-top: 32px;
+    border-top: 1px solid #222;
+}
+
+.sh-stat__num {
+    display: block;
+    font-family: 'Okkult', sans-serif;
+    font-size: 42px;
+    color: var(--greed-green);
+    line-height: 1;
+}
+
+.sh-stat__label {
+    display: block;
+    font-family: 'AstyCF', sans-serif;
+    font-size: 13px;
+    color: #555;
+    margin-top: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* ── Bottom CTA ──────────────────────────────────────────────── */
+.sh-cta {
+    background: var(--greed-green);
+    padding: 96px 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.sh-cta__inner {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.sh-cta__headline {
+    font-family: 'Okkult', sans-serif;
+    font-size: clamp(44px, 5vw, 72px);
+    text-transform: uppercase;
+    line-height: 1.0;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.sh-cta__sub {
+    font-family: 'AstyCF', sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 36px;
+}
+
+/* CTA scattered image frames */
+.sh-cta__frames {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.sh-cta__frame {
+    position: absolute;
+    border: 2px solid rgba(0, 0, 0, 0.25);
+    background: rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.sh-cta__frame--1 {
+    width: 200px;
+    height: 260px;
+    top: 48px;
+    left: 48px;
+    transform: rotate(-4deg);
+}
+
+.sh-cta__frame--2 {
+    width: 170px;
+    height: 220px;
+    bottom: 48px;
+    left: 200px;
+    transform: rotate(3deg);
+}
+
+.sh-cta__frame--3 {
+    width: 190px;
+    height: 240px;
+    top: 32px;
+    right: 48px;
+    transform: rotate(5deg);
+}
+
+.sh-cta__frame--4 {
+    width: 165px;
+    height: 200px;
+    bottom: 40px;
+    right: 180px;
+    transform: rotate(-3deg);
+}
+
+.sh-cta__frame-icon {
+    font-size: 28px;
+    opacity: 0.3;
+}
+
+.sh-cta__frame-label {
+    font-family: 'AstyCF', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #000;
+    opacity: 0.3;
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 1100px) {
+
+    .sh-grid--4,
+    .sh-grid--merch {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sh-statement__inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+}
+
+@media (max-width: 860px) {
+    .sh-hero {
+        grid-template-columns: 1fr;
+        padding: 48px 24px 0;
+        min-height: auto;
+    }
+
+    .sh-hero__visual {
+        padding-bottom: 32px;
+    }
+
+    .sh-strip {
+        grid-template-columns: 1fr;
+    }
+
+    .sh-strip__item {
+        padding: 20px 24px;
+        border-right: none;
+        border-bottom: 1.5px solid #000;
+    }
+
+    .sh-section,
+    .sh-statement,
+    .sh-cta {
+        padding: 64px 24px;
+    }
+
+    .sh-grid--4,
+    .sh-grid--merch {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+
+    .sh-grid--4,
+    .sh-grid--merch {
+        grid-template-columns: 1fr;
+    }
+}

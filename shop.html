@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/media/Greed_Logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop | Greed</title>
+    <meta name="description"
+        content="Shop Greed — specialty coffee beans, gear, and everyday essentials built to the same standards as what we serve." />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./shop.css" />
+    <script type="module" src="./nav.js"></script>
+    <script type="module" src="./cart.js"></script>
+</head>
+
+<body class="shop-page">
+
+    <!-- ── Navbar ──────────────────────────────────────────────────── -->
+    <nav class="navbar navbar--static">
+        <div class="logo">
+            <a href="/"><img src="/media/Greed_Logo.png" alt="Greed Logo" /></a>
+        </div>
+        <div class="center-nav-wrapper">
+            <div class="nav-container">
+                <a href="/" class="nav-item">HOME</a>
+                <a href="/menu.html" class="nav-item">MENU</a>
+                <a href="/contact.html" class="nav-item">CONTACT</a>
+            </div>
+            <a href="/shop.html" class="shop-btn">SHOP</a>
+            <a href="/cart.html" class="cart-nav-btn" aria-label="View cart">
+                BAG
+                <span class="cart-nav-badge" aria-live="polite"></span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- ── HERO ───────────────────────────────────────────────────── -->
+    <section class="sh-hero">
+        <div class="sh-hero__text">
+            <p class="sh-hero__eyebrow">The Greed Store</p>
+            <h1 class="sh-hero__headline">
+                <span class="sh-hero__headline--line">Take</span>
+                <span class="sh-hero__headline--green">Greed</span>
+                <span class="sh-hero__headline--line">Home.</span>
+            </h1>
+            <p class="sh-hero__sub">Coffee, gear, and everyday essentials —<br>built to the same standards as what we
+                serve.</p>
+        </div>
+        <div class="sh-hero__visual">
+            <div class="sh-hero__card sh-hero__card--1">
+                <span class="sh-hero__card-label">ORIGINS BLEND</span>
+                <span class="sh-hero__card-weight">250g</span>
+            </div>
+            <div class="sh-hero__card sh-hero__card--2">
+                <span class="sh-hero__card-label">DARK ROAST ESPRESSO</span>
+                <span class="sh-hero__card-weight">250g</span>
+            </div>
+            <div class="sh-hero__card sh-hero__card--3">
+                <span class="sh-hero__card-label">OG HOUSE ROAST</span>
+                <span class="sh-hero__card-weight">250g</span>
+            </div>
+            <div class="sh-hero__card sh-hero__card--4">
+                <span class="sh-hero__card-label">DEVIL'S ROAST</span>
+                <span class="sh-hero__card-weight">500g</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── CATEGORY STRIP ─────────────────────────────────────────── -->
+    <div class="sh-strip">
+        <a href="#beans" class="sh-strip__item">
+            <span class="sh-strip__num">01</span>
+            <span class="sh-strip__label">Coffee Beans</span>
+            <span class="sh-strip__count">4 products</span>
+            <span class="sh-strip__arrow">→</span>
+        </a>
+        <a href="#merch" class="sh-strip__item">
+            <span class="sh-strip__num">02</span>
+            <span class="sh-strip__label">Merch</span>
+            <span class="sh-strip__count">4 products</span>
+            <span class="sh-strip__arrow">→</span>
+        </a>
+    </div>
+
+    <!-- ── BEANS SECTION ──────────────────────────────────────────── -->
+    <section class="sh-section" id="beans">
+        <div class="sh-section__header">
+            <div class="sh-section__meta">
+                <span class="sh-section__num">01</span>
+                <span class="sh-section__tag">Coffee Beans</span>
+            </div>
+            <h2 class="sh-section__title">The Beans.</h2>
+            <p class="sh-section__sub">Single origins, blends, and everything in between — roasted for flavour, not
+                trends.</p>
+        </div>
+
+        <div class="sh-grid sh-grid--4">
+
+            <div class="sh-product" data-product-id="origins-blend" data-thumb="bean">
+                <div class="sh-product__img sh-product__img--kraft">
+                    <div class="sh-product__bag">
+                        <div class="sh-product__bag-valve"></div>
+                        <div class="sh-product__bag-label">
+                            <span>ORIGINS</span>
+                            <span>BLEND</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sh-product__info">
+                    <div class="sh-product__top">
+                        <h3 class="sh-product__name">Origins Blend</h3>
+                        <span class="sh-product__badge">Best Seller</span>
+                    </div>
+                    <p class="sh-product__desc">Balanced, smooth, and always consistent. Our flagship blend for every
+                        brew method.</p>
+                    <div class="sh-product__meta">
+                        <span class="sh-product__weight">250g</span>
+                        <span class="sh-product__roast">Medium Roast</span>
+                    </div>
+                    <div class="sh-product__footer">
+                        <span class="sh-product__price">₹499</span>
+                        <button class="sh-add-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sh-product" data-product-id="dark-roast-espresso" data-thumb="dark">
+                <div class="sh-product__img sh-product__img--dark">
+                    <div class="sh-product__bag">
+                        <div class="sh-product__bag-valve"></div>
+                        <div class="sh-product__bag-label sh-product__bag-label--light">
+                            <span>DARK</span>
+                            <span>ROAST</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sh-product__info">
+                    <div class="sh-product__top">
+                        <h3 class="sh-product__name">Dark Roast Espresso</h3>
+                    </div>
+                    <p class="sh-product__desc">Bold, intense, meant for espresso. Full body with low acidity and a long
+                        finish.</p>
+                    <div class="sh-product__meta">
+                        <span class="sh-product__weight">250g</span>
+                        <span class="sh-product__roast">Dark Roast</span>
+                    </div>
+                    <div class="sh-product__footer">
+                        <span class="sh-product__price">₹549</span>
+                        <button class="sh-add-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sh-product" data-product-id="og-house-roast" data-thumb="light">
+                <div class="sh-product__img sh-product__img--light">
+                    <div class="sh-product__bag">
+                        <div class="sh-product__bag-valve"></div>
+                        <div class="sh-product__bag-label">
+                            <span>OG</span>
+                            <span>HOUSE</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sh-product__info">
+                    <div class="sh-product__top">
+                        <h3 class="sh-product__name">OG House Roast</h3>
+                    </div>
+                    <p class="sh-product__desc">The one that started it all. Medium body, smooth finish — our original
+                        roast that built the Greed cult.</p>
+                    <div class="sh-product__meta">
+                        <span class="sh-product__weight">250g</span>
+                        <span class="sh-product__roast">Medium Roast</span>
+                    </div>
+                    <div class="sh-product__footer">
+                        <span class="sh-product__price">₹529</span>
+                        <button class="sh-add-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sh-product" data-product-id="devils-roast" data-thumb="green">
+                <div class="sh-product__img sh-product__img--green">
+                    <div class="sh-product__bag">
+                        <div class="sh-product__bag-valve"></div>
+                        <div class="sh-product__bag-label">
+                            <span>DEVIL'S</span>
+                            <span>ROAST</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sh-product__info">
+                    <div class="sh-product__top">
+                        <h3 class="sh-product__name">Devil's Roast</h3>
+                    </div>
+                    <p class="sh-product__desc">Dark, punishing, no apologies. Intense espresso roast for people who
+                        take their coffee seriously.</p>
+                    <div class="sh-product__meta">
+                        <span class="sh-product__weight">500g</span>
+                        <span class="sh-product__roast">Dark Roast</span>
+                    </div>
+                    <div class="sh-product__footer">
+                        <span class="sh-product__price">₹899</span>
+                        <button class="sh-add-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── QUALITY STATEMENT ──────────────────────────────────────── -->
+    <section class="sh-statement">
+        <div class="sh-statement__inner">
+            <p class="sh-statement__eyebrow">Why Greed Beans</p>
+            <h2 class="sh-statement__headline">
+                We don't<br>compromise<br>on what<br>goes in the bag.
+            </h2>
+            <div class="sh-statement__body">
+                <p>Every batch is sourced, roasted, and packed to the same standard we hold our cafés to. No filler, no
+                    fuss — just coffee that works.</p>
+                <p>Ground to order or whole bean. Delivered to your door within 3 days of roasting.</p>
+                <div class="sh-statement__stats">
+                    <div class="sh-stat">
+                        <span class="sh-stat__num">72h</span>
+                        <span class="sh-stat__label">Post-roast delivery</span>
+                    </div>
+                    <div class="sh-stat">
+                        <span class="sh-stat__num">100%</span>
+                        <span class="sh-stat__label">Arabica, always</span>
+                    </div>
+                    <div class="sh-stat">
+                        <span class="sh-stat__num">4</span>
+                        <span class="sh-stat__label">Roast profiles</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── MERCH SECTION ──────────────────────────────────────────── -->
+    <section class="sh-section sh-section--white" id="merch">
+        <div class="sh-section__header">
+            <div class="sh-section__meta">
+                <span class="sh-section__num">02</span>
+                <span class="sh-section__tag">Merch</span>
+            </div>
+            <h2 class="sh-section__title">Wear Us.</h2>
+            <p class="sh-section__sub">For those who didn't just try Greed — they got it.</p>
+        </div>
+
+        <div class="sh-grid sh-grid--merch">
+
+            <div class="sh-product sh-product--tall" data-product-id="brew-crew-hoodie" data-thumb="tee">
+                <div class="sh-product__img sh-product__img--tee">
+                    <div class="sh-merch-visual">
+                        <div class="sh-tee">
+                            <div class="sh-tee__body">
+                                <span class="sh-tee__text">greed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sh-product__info">
+                    <div class="sh-product__top">
+                        <h3 class="sh-product__name">Brew Crew Hoodie</h3>
+                        <span class="sh-product__badge sh-product__badge--new">New</span>
+                    </div>
+                    <p class="sh-product__desc">Heavy 380gsm cotton fleece. Oversized fit. "greed" chest embroidery in
+                        Greed green. For the regulars.</p>
+                    <div class="sh-product__meta">
+                        <span class="sh-product__weight">S / M / L / XL</span>
+                        <span class="sh-product__roast">Black</span>
+                    </div>
+                    <div class="sh-product__footer">
+                        <span class="sh-product__price">₹1799</span>
+                        <button class="sh-add-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sh-product sh-product--tall" data-product-id="canvas-carry-tote" data-thumb="tote">
+                <div class="sh-product__img sh-product__img--tote">
+                    <div class="sh-merch-visual">
+                        <div class="sh-tote">
+                            <div class="sh-tote__handle sh-tote__handle--l"></div>
+                            <div class="sh-tote__handle sh-tote__handle--r"></div>
+                            <div class="sh-tote__body">
+                                <span class="sh-tote__text">GREED</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sh-product__info">
+                    <div class="sh-product__top">
+                        <h3 class="sh-product__name">Canvas Carry Tote</h3>
+                    </div>
+                    <p class="sh-product__desc">Natural canvas. 15L capacity. GREED screenprint. Fits your coffee, your
+                        laptop, and your attitude.</p>
+                    <div class="sh-product__meta">
+                        <span class="sh-product__weight">One size</span>
+                        <span class="sh-product__roast">Natural Canvas</span>
+                    </div>
+                    <div class="sh-product__footer">
+                        <span class="sh-product__price">₹599</span>
+                        <button class="sh-add-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sh-product sh-product--tall" data-product-id="ceramic-mug" data-thumb="mug">
+                <div class="sh-product__img sh-product__img--mug">
+                    <div class="sh-merch-visual">
+                        <div class="sh-mug">
+                            <div class="sh-mug__handle"></div>
+                            <div class="sh-mug__body">
+                                <span class="sh-mug__text">greed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sh-product__info">
+                    <div class="sh-product__top">
+                        <h3 class="sh-product__name">Ceramic Mug</h3>
+                        <span class="sh-product__badge">Fan Fav</span>
+                    </div>
+                    <p class="sh-product__desc">400ml matte black ceramic. Heavyweight. Dishwasher safe. Looks as good
+                        as it pours.</p>
+                    <div class="sh-product__meta">
+                        <span class="sh-product__weight">400ml</span>
+                        <span class="sh-product__roast">Matte Black</span>
+                    </div>
+                    <div class="sh-product__footer">
+                        <span class="sh-product__price">₹699</span>
+                        <button class="sh-add-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sh-product sh-product--tall" data-product-id="6-panel-cap" data-thumb="cap">
+                <div class="sh-product__img sh-product__img--cap">
+                    <div class="sh-merch-visual">
+                        <div class="sh-cap">
+                            <div class="sh-cap__brim"></div>
+                            <div class="sh-cap__crown">
+                                <span class="sh-cap__text">GREED</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sh-product__info">
+                    <div class="sh-product__top">
+                        <h3 class="sh-product__name">6-Panel Cap</h3>
+                    </div>
+                    <p class="sh-product__desc">Structured 6-panel. GREED embroidery in Greed green. Adjustable strap.
+                        One-size.</p>
+                    <div class="sh-product__meta">
+                        <span class="sh-product__weight">One size</span>
+                        <span class="sh-product__roast">Black</span>
+                    </div>
+                    <div class="sh-product__footer">
+                        <span class="sh-product__price">₹799</span>
+                        <button class="sh-add-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── BOTTOM CTA ─────────────────────────────────────────────── -->
+    <section class="sh-cta">
+
+        <!-- Scattered placeholder image frames -->
+        <div class="sh-cta__frames" aria-hidden="true">
+            <div class="sh-cta__frame sh-cta__frame--1">
+                <span class="sh-cta__frame-icon">◻</span>
+                <span class="sh-cta__frame-label">Photo coming soon</span>
+            </div>
+            <div class="sh-cta__frame sh-cta__frame--2">
+                <span class="sh-cta__frame-icon">◻</span>
+                <span class="sh-cta__frame-label">Photo coming soon</span>
+            </div>
+            <div class="sh-cta__frame sh-cta__frame--3">
+                <span class="sh-cta__frame-icon">◻</span>
+                <span class="sh-cta__frame-label">Photo coming soon</span>
+            </div>
+            <div class="sh-cta__frame sh-cta__frame--4">
+                <span class="sh-cta__frame-icon">◻</span>
+                <span class="sh-cta__frame-label">Photo coming soon</span>
+            </div>
+        </div>
+
+        <div class="sh-cta__inner">
+            <h2 class="sh-cta__headline">Start with the beans.<br>Stay for everything else.</h2>
+            <p class="sh-cta__sub">Free delivery on orders above ₹999. Roasted fresh, dispatched within 24 hours.</p>
+            <a href="#beans" class="sh-btn sh-btn--cta">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- ── Site Footer ──────────────────────────────────────────── -->
+    <footer class="site-footer">
+        <div class="site-footer__inner">
+            <div class="site-footer__brand">
+                <img src="/media/Greed_Logo.png" alt="Greed" class="site-footer__logo" />
+                <p class="site-footer__tagline">Specialty coffee for people who want more.</p>
+            </div>
+            <div class="site-footer__col">
+                <h4 class="site-footer__col-title">Explore</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="/shop.html">Shop</a></li>
+                    <li><a href="#">Loyalty</a></li>
+                </ul>
+            </div>
+            <div class="site-footer__col">
+                <h4 class="site-footer__col-title">Contact</h4>
+                <ul>
+                    <li><a href="/contact.html">Contact Us</a></li>
+                    <li><a href="/contact.html#partner">Partner with Us</a></li>
+                    <li><a href="/contact.html#bulk">Bulk Orders</a></li>
+                    <li><a href="/contact.html#careers">Careers</a></li>
+                </ul>
+            </div>
+            <div class="site-footer__col">
+                <h4 class="site-footer__col-title">Find Us</h4>
+                <ul>
+                    <li><a href="#">Locations</a></li>
+                    <li><a href="#">Order on Zomato</a></li>
+                    <li><a href="#">Order on WhatsApp</a></li>
+                    <li><a href="#">Order Online</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="site-footer__bottom">
+            <span>© 2025 Greed. All rights reserved.</span>
+            <span>hello@bygreed.com</span>
+        </div>
+    </footer>
+
+</body>
+
+</html>

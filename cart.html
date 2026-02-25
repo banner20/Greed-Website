@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/media/Greed_Logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart | Greed</title>
+    <meta name="description" content="Your Greed cart — review your coffee beans and merchandise before checkout." />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./cart.css" />
+    <script type="module" src="./nav.js"></script>
+    <script type="module" src="./cart.js"></script>
+</head>
+
+<body class="cart-page">
+
+    <!-- ── Navbar ──────────────────────────────────────────────────── -->
+    <nav class="navbar navbar--static">
+        <div class="logo">
+            <a href="/"><img src="/media/Greed_Logo.png" alt="Greed Logo" /></a>
+        </div>
+        <div class="center-nav-wrapper">
+            <div class="nav-container">
+                <a href="/" class="nav-item">HOME</a>
+                <a href="/menu.html" class="nav-item">MENU</a>
+                <a href="/contact.html" class="nav-item">CONTACT</a>
+            </div>
+            <a href="/shop.html" class="shop-btn">SHOP</a>
+            <a href="/cart.html" class="cart-nav-btn" aria-label="View cart">
+                BAG
+                <span class="cart-nav-badge" aria-live="polite"></span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- ── CART PAGE ─────────────────────────────────────────────── -->
+    <main class="cart-main">
+
+        <div class="cart-header">
+            <h1 class="cart-header__title">Your Bag.</h1>
+            <span class="cart-header__count">0 items</span>
+        </div>
+
+        <!-- Empty state -->
+        <div class="cart-empty" style="display:none;">
+            <h2 class="cart-empty__headline">Your bag is<br>empty.</h2>
+            <p class="cart-empty__sub">Nothing here yet — go pick something worth being greedy about.</p>
+            <a href="/shop.html" class="sh-btn sh-btn--primary"
+                style="font-family:'Okkult',sans-serif;font-size:18px;text-transform:uppercase;letter-spacing:.04em;padding:16px 36px;background:#000;color:var(--greed-green);text-decoration:none;display:inline-block;border:2px solid #000;">Shop
+                Now</a>
+        </div>
+
+        <!-- Cart layout — hidden until items exist -->
+        <div class="cart-layout">
+
+            <!-- Items column -->
+            <div>
+                <div class="cart-items-wrap">
+                    <!-- Rendered by cart.js -->
+                </div>
+            </div>
+
+            <!-- Summary sidebar -->
+            <aside class="cart-summary">
+                <h2 class="cart-summary__title">Order Summary</h2>
+
+                <div class="cart-summary__row">
+                    <span>Subtotal</span>
+                    <span class="cart-subtotal">₹0</span>
+                </div>
+                <div class="cart-summary__row">
+                    <span>Delivery</span>
+                    <span class="cart-delivery">₹99</span>
+                </div>
+                <div class="cart-summary__row cart-summary__row--total">
+                    <span>Total</span>
+                    <span class="cart-total">₹0</span>
+                </div>
+
+                <p class="cart-summary__note">Add ₹999 more for free delivery.</p>
+
+                <a href="#" class="cart-checkout-btn">Checkout →</a>
+                <a href="/shop.html" class="cart-continue-btn">← Continue Shopping</a>
+            </aside>
+
+        </div>
+    </main>
+
+    <!-- ── Site Footer ──────────────────────────────────────────── -->
+    <footer class="site-footer">
+        <div class="site-footer__inner">
+            <div class="site-footer__brand">
+                <img src="/media/Greed_Logo.png" alt="Greed" class="site-footer__logo" />
+                <p class="site-footer__tagline">Specialty coffee for people who want more.</p>
+            </div>
+            <div class="site-footer__col">
+                <h4 class="site-footer__col-title">Explore</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="/shop.html">Shop</a></li>
+                    <li><a href="#">Loyalty</a></li>
+                </ul>
+            </div>
+            <div class="site-footer__col">
+                <h4 class="site-footer__col-title">Contact</h4>
+                <ul>
+                    <li><a href="/contact.html">Contact Us</a></li>
+                    <li><a href="/contact.html#partner">Partner with Us</a></li>
+                    <li><a href="/contact.html#bulk">Bulk Orders</a></li>
+                    <li><a href="/contact.html#careers">Careers</a></li>
+                </ul>
+            </div>
+            <div class="site-footer__col">
+                <h4 class="site-footer__col-title">Find Us</h4>
+                <ul>
+                    <li><a href="#">Locations</a></li>
+                    <li><a href="#">Order on Zomato</a></li>
+                    <li><a href="#">Order on WhatsApp</a></li>
+                    <li><a href="#">Order Online</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="site-footer__bottom">
+            <span>© 2025 Greed. All rights reserved.</span>
+            <span>hello@bygreed.com</span>
+        </div>
+    </footer>
+
+</body>
+
+</html>

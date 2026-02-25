@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/media/Greed_Logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Greed</title>
+    <meta name="description"
+        content="Get in touch with Greed — general enquiries, partnerships, bulk orders, and careers." />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./contact.css" />
+    <script type="module" src="./nav.js"></script>
+</head>
+
+<body class="contact-page">
+
+    <!-- ── Navbar ──────────────────────────────────────────────────────────── -->
+    <nav class="navbar navbar--static">
+        <div class="logo">
+            <a href="/"><img src="/media/Greed_Logo.png" alt="Greed Logo" /></a>
+        </div>
+        <div class="center-nav-wrapper">
+            <div class="nav-container">
+                <a href="/" class="nav-item">HOME</a>
+                <a href="/menu.html" class="nav-item">MENU</a>
+                <a href="/contact.html" class="nav-item">CONTACT</a>
+            </div>
+            <a href="/shop.html" class="shop-btn">SHOP</a>
+        </div>
+    </nav>
+
+    <!-- ── HERO ───────────────────────────────────────────────────────────── -->
+    <section class="ct-hero">
+        <div class="ct-hero__inner">
+            <p class="ct-hero__eyebrow">Get in touch</p>
+            <h1 class="ct-hero__headline">Let's talk.</h1>
+            <p class="ct-hero__sub">Questions, partnerships, bulk orders,<br>or something bigger — reach out.</p>
+        </div>
+        <div class="ct-hero__divider"></div>
+    </section>
+
+    <!-- ── SECTION 2 — GENERAL ENQUIRIES ─────────────────────────────────── -->
+    <section class="ct-section ct-general" id="general">
+        <div class="ct-section__inner">
+
+            <div class="ct-section__header">
+                <span class="ct-label">01</span>
+                <h2 class="ct-section__title">General<br>Enquiries</h2>
+                <p class="ct-section__copy">
+                    For anything related to orders, products, feedback, or general
+                    questions, get in touch below.<br><br>
+                    We usually respond within 24–48 hours.
+                </p>
+                <div class="ct-contact-info">
+                    <a href="mailto:hello@bygreed.com" class="ct-contact-link">hello@bygreed.com</a>
+                    <a href="tel:+91XXXXXXXXXX" class="ct-contact-link">+91 XXXXX XXXXX</a>
+                </div>
+            </div>
+
+            <form class="ct-form" id="form-general" novalidate>
+                <div class="ct-form__row ct-form__row--2">
+                    <div class="ct-field">
+                        <label for="g-name">Name</label>
+                        <input id="g-name" type="text" name="name" placeholder="Your name" required />
+                    </div>
+                    <div class="ct-field">
+                        <label for="g-email">Email</label>
+                        <input id="g-email" type="email" name="email" placeholder="you@example.com" required />
+                    </div>
+                </div>
+                <div class="ct-form__row ct-form__row--2">
+                    <div class="ct-field">
+                        <label for="g-phone">Phone <span class="ct-optional">(optional)</span></label>
+                        <input id="g-phone" type="tel" name="phone" placeholder="+91 XXXXX XXXXX" />
+                    </div>
+                    <div class="ct-field">
+                        <label for="g-subject">Subject</label>
+                        <select id="g-subject" name="subject" required>
+                            <option value="" disabled selected>Select a topic</option>
+                            <option value="general">General enquiry</option>
+                            <option value="product">Product question</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="ct-field ct-field--full">
+                    <label for="g-message">Message</label>
+                    <textarea id="g-message" name="message" rows="5" placeholder="What's on your mind?"
+                        required></textarea>
+                </div>
+                <button type="submit" class="ct-btn ct-btn--primary">Send message</button>
+            </form>
+
+        </div>
+    </section>
+
+    <!-- ── SECTION 3 — PARTNER WITH GREED ────────────────────────────────── -->
+    <section class="ct-section ct-partner ct-section--alt" id="partner">
+        <div class="ct-section__inner">
+
+            <div class="ct-section__header">
+                <span class="ct-label">02</span>
+                <h2 class="ct-section__title">Partner<br>with Greed</h2>
+                <p class="ct-section__copy">
+                    Greed operates in high-footfall environments including university
+                    campuses, corporate parks, and structured work hubs.<br><br>
+                    If you're exploring a partnership or location opportunity, tell us
+                    about your space and audience.<br><br>
+                    We review all serious enquiries.
+                </p>
+            </div>
+
+            <form class="ct-form" id="form-partner" novalidate>
+                <div class="ct-form__row ct-form__row--2">
+                    <div class="ct-field">
+                        <label for="p-org">Organization / Campus / Company</label>
+                        <input id="p-org" type="text" name="org" placeholder="Name of your organization" required />
+                    </div>
+                    <div class="ct-field">
+                        <label for="p-contact">Contact Person</label>
+                        <input id="p-contact" type="text" name="contact" placeholder="Your full name" required />
+                    </div>
+                </div>
+                <div class="ct-form__row ct-form__row--2">
+                    <div class="ct-field">
+                        <label for="p-role">Role</label>
+                        <input id="p-role" type="text" name="role" placeholder="e.g. Admin, Director, Facilities" />
+                    </div>
+                    <div class="ct-field">
+                        <label for="p-email">Email</label>
+                        <input id="p-email" type="email" name="email" placeholder="you@organization.com" required />
+                    </div>
+                </div>
+                <div class="ct-form__row ct-form__row--2">
+                    <div class="ct-field">
+                        <label for="p-phone">Phone</label>
+                        <input id="p-phone" type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required />
+                    </div>
+                    <div class="ct-field">
+                        <label for="p-city">Location (City)</label>
+                        <input id="p-city" type="text" name="city" placeholder="City" required />
+                    </div>
+                </div>
+                <div class="ct-field ct-field--full">
+                    <label for="p-footfall">Estimated daily footfall <span class="ct-optional">(optional)</span></label>
+                    <input id="p-footfall" type="text" name="footfall" placeholder="Approx. number of people per day" />
+                </div>
+                <div class="ct-field ct-field--full">
+                    <label for="p-message">Message</label>
+                    <textarea id="p-message" name="message" rows="5"
+                        placeholder="Tell us about your space and what you're looking for." required></textarea>
+                </div>
+                <button type="submit" class="ct-btn ct-btn--primary">Submit partnership enquiry</button>
+            </form>
+
+        </div>
+    </section>
+
+    <!-- ── SECTION 4 — BULK & CORPORATE ORDERS ───────────────────────────── -->
+    <section class="ct-section ct-bulk" id="bulk">
+        <div class="ct-section__inner ct-section__inner--centered">
+            <span class="ct-label">03</span>
+            <h2 class="ct-section__title">Bulk &amp;<br>Corporate Orders</h2>
+            <p class="ct-section__copy ct-section__copy--center">
+                Planning an event, team meeting, or campus activity?<br><br>
+                We offer bulk coffee and food solutions tailored to your requirements.<br>
+                Tell us what you need and we'll get back with options.
+            </p>
+            <a href="mailto:hello@bygreed.com?subject=Bulk Order Enquiry" class="ct-btn ct-btn--primary">
+                Request bulk order
+            </a>
+        </div>
+    </section>
+
+    <!-- ── SECTION 5 — CAREERS ────────────────────────────────────────────── -->
+    <section class="ct-section ct-careers ct-section--alt" id="careers">
+        <div class="ct-section__inner ct-section__inner--centered">
+            <span class="ct-label">04</span>
+            <h2 class="ct-section__title">Careers<br>at Greed</h2>
+            <p class="ct-section__copy ct-section__copy--center">
+                We're building a team that cares about quality, speed, and consistency.<br><br>
+                If you're serious about doing good work, we'd like to hear from you.
+            </p>
+            <a href="mailto:careers@bygreed.com" class="ct-btn ct-btn--outline">
+                careers@bygreed.com
+            </a>
+        </div>
+    </section>
+
+    <!-- ── Site Footer ──────────────────────────────────────────────── -->
+    <footer class="site-footer">
+        <div class="site-footer__inner">
+
+            <div class="site-footer__brand">
+                <img src="/media/Greed_Logo.png" alt="Greed" class="site-footer__logo" />
+                <p class="site-footer__tagline">Specialty coffee for people who want more.</p>
+            </div>
+
+            <div class="site-footer__col">
+                <h4 class="site-footer__col-title">Explore</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Loyalty</a></li>
+                </ul>
+            </div>
+
+            <div class="site-footer__col">
+                <h4 class="site-footer__col-title">Contact</h4>
+                <ul>
+                    <li><a href="/contact.html">Contact Us</a></li>
+                    <li><a href="/contact.html#partner">Partner with Us</a></li>
+                    <li><a href="/contact.html#bulk">Bulk Orders</a></li>
+                    <li><a href="/contact.html#careers">Careers</a></li>
+                </ul>
+            </div>
+
+            <div class="site-footer__col">
+                <h4 class="site-footer__col-title">Find Us</h4>
+                <ul>
+                    <li><a href="#">Locations</a></li>
+                    <li><a href="#">Order on Zomato</a></li>
+                    <li><a href="#">Order on WhatsApp</a></li>
+                    <li><a href="#">Order Online</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="site-footer__bottom">
+            <span>© 2025 Greed. All rights reserved.</span>
+            <span>hello@bygreed.com</span>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

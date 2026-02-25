@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/media/Greed_Logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu | Greed</title>
+    <meta name="description"
+        content="The full Greed menu — specialty coffees, cold brews, matchas, coolers, and toasted sandwiches. Hot, iced, and outrageously good." />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./menu.css" />
+    <script type="module" src="./nav.js"></script>
+    <script type="module" src="./cart.js"></script>
+</head>
+
+<body class="menu-page">
+
+    <!-- ── Navbar ──────────────────────────────────────────────────── -->
+    <nav class="navbar navbar--static">
+        <div class="logo">
+            <a href="/"><img src="/media/Greed_Logo.png" alt="Greed Logo" /></a>
+        </div>
+        <div class="center-nav-wrapper">
+            <div class="nav-container">
+                <a href="/" class="nav-item">HOME</a>
+                <a href="/menu.html" class="nav-item">MENU</a>
+                <a href="/contact.html" class="nav-item">CONTACT</a>
+            </div>
+            <a href="/shop.html" class="shop-btn">SHOP</a>
+            <a href="/cart.html" class="cart-nav-btn" aria-label="View cart">
+                BAG
+                <span class="cart-nav-badge" aria-live="polite"></span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- ── HERO ─────────────────────────────────────────────────────── -->
+    <section class="mn-hero">
+        <div class="mn-hero__text">
+            <p class="mn-hero__eyebrow">What we serve</p>
+            <h1 class="mn-hero__headline">WE HAVE<br /><span class="mn-hero__headline--green">THE STUFF.</span></h1>
+            <p class="mn-hero__sub">Every sip. Every bite.<br />Pick your poison.</p>
+        </div>
+        <div class="mn-hero__scroll-hint" aria-hidden="true">
+            <span>Scroll to explore</span>
+            <svg width="16" height="24" viewBox="0 0 16 24" fill="none">
+                <rect x="1" y="1" width="14" height="22" rx="7" stroke="currentColor" stroke-width="1.5" />
+                <rect class="mn-scroll-dot" x="6" y="5" width="4" height="6" rx="2" fill="currentColor" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- ── STICKY WRAPPER (rail + filters) ──────────────────────────── -->
+    <div class="mn-sticky" id="mnSticky">
+
+        <!-- Category Rail -->
+        <div class="mn-rail" id="mnRail" role="tablist" aria-label="Menu categories">
+            <!-- tabs injected by JS -->
+        </div>
+
+        <!-- Filter / Sort Bar -->
+        <div class="mn-bar" id="mnBar">
+            <div class="mn-chips" id="mnChips" role="group" aria-label="Filter options">
+                <button class="mn-chip mn-chip--active" data-chip="all">All</button>
+                <button class="mn-chip" data-chip="hot">🔥 Hot</button>
+                <button class="mn-chip" data-chip="iced">🧊 Iced</button>
+                <button class="mn-chip" data-chip="veg">🌱 Veg</button>
+                <button class="mn-chip" data-chip="non-veg">🍗 Non-Veg</button>
+                <button class="mn-chip" data-chip="recommended">⭐ Rec'd</button>
+            </div>
+            <div class="mn-sort">
+                <label class="mn-sort__label" for="mnSort">Sort</label>
+                <select class="mn-sort__select" id="mnSort" aria-label="Sort items">
+                    <option value="default">Default</option>
+                    <option value="price-asc">Price ↑</option>
+                    <option value="price-desc">Price ↓</option>
+                    <option value="name-az">Name A–Z</option>
+                </select>
+            </div>
+            <div class="mn-results" id="mnResults" aria-live="polite">
+                <span id="mnCount">35</span> items
+            </div>
+            <!-- View Toggles -->
+            <div class="mn-views" role="group" aria-label="View mode">
+                <button class="mn-view-btn mn-view-btn--active" data-view="split" title="Split view"
+                    aria-pressed="true">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <rect x="1" y="1" width="7" height="5" rx="1" fill="currentColor" />
+                        <rect x="10" y="1" width="7" height="5" rx="1" fill="currentColor" />
+                        <rect x="1" y="7" width="7" height="5" rx="1" fill="currentColor" />
+                        <rect x="10" y="7" width="7" height="5" rx="1" fill="currentColor" />
+                        <rect x="1" y="13" width="7" height="4" rx="1" fill="currentColor" />
+                        <rect x="10" y="13" width="7" height="4" rx="1" fill="currentColor" />
+                    </svg>
+                    <span>Split</span>
+                </button>
+                <button class="mn-view-btn" data-view="card" title="Card view" aria-pressed="false">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <rect x="1" y="1" width="5" height="7" rx="1" fill="currentColor" />
+                        <rect x="7" y="1" width="5" height="7" rx="1" fill="currentColor" />
+                        <rect x="13" y="1" width="4" height="7" rx="1" fill="currentColor" />
+                        <rect x="1" y="10" width="5" height="7" rx="1" fill="currentColor" />
+                        <rect x="7" y="10" width="5" height="7" rx="1" fill="currentColor" />
+                        <rect x="13" y="10" width="4" height="7" rx="1" fill="currentColor" />
+                    </svg>
+                    <span>Cards</span>
+                </button>
+                <button class="mn-view-btn" data-view="list" title="List view" aria-pressed="false">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <rect x="1" y="2" width="16" height="3" rx="1" fill="currentColor" />
+                        <rect x="1" y="7.5" width="16" height="3" rx="1" fill="currentColor" />
+                        <rect x="1" y="13" width="16" height="3" rx="1" fill="currentColor" />
+                    </svg>
+                    <span>List</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── ITEM GRID ─────────────────────────────────────────────────── -->
+    <main class="mn-main" id="mnMain" aria-label="Menu items">
+        <div class="mn-grid" id="mnGrid" role="list">
+            <!-- cards injected by JS -->
+        </div>
+
+        <!-- Empty state -->
+        <div class="mn-empty" id="mnEmpty" hidden>
+            <p class="mn-empty__emoji">☕</p>
+            <p class="mn-empty__text">Nothing matches that filter.</p>
+            <button class="mn-empty__reset" id="mnReset">Reset filters</button>
+        </div>
+    </main>
+
+    <!-- ── MILK NOTE STRIP ─────────────────────────────────────────── -->
+    <div class="mn-milk-strip">
+        <span class="mn-milk-strip__text">Substitute your regular milk → Almond +55 &nbsp;·&nbsp; Oat +55</span>
+        <span class="mn-milk-strip__text">Substitute your regular milk → Almond +55 &nbsp;·&nbsp; Oat +55</span>
+    </div>
+
+    <!-- ── QUICK-VIEW DRAWER ──────────────────────────────────────────── -->
+    <div class="mn-overlay" id="mnOverlay" aria-hidden="true"></div>
+    <aside class="mn-drawer" id="mnDrawer" aria-hidden="true" aria-label="Item details">
+        <button class="mn-drawer__close" id="mnDrawerClose" aria-label="Close">✕</button>
+        <div class="mn-drawer__img-wrap">
+            <img class="mn-drawer__img" id="mnDrawerImg" src="" alt="" />
+            <div class="mn-drawer__img-placeholder" id="mnDrawerImgPlaceholder" aria-hidden="true"></div>
+        </div>
+        <div class="mn-drawer__body">
+            <span class="mn-drawer__category" id="mnDrawerCategory"></span>
+            <h2 class="mn-drawer__name" id="mnDrawerName"></h2>
+            <p class="mn-drawer__desc" id="mnDrawerDesc"></p>
+            <div class="mn-drawer__tags" id="mnDrawerTags"></div>
+            <div class="mn-drawer__milk" id="mnDrawerMilk"></div>
+            <div class="mn-drawer__locations" id="mnDrawerLocations">
+                <p class="mn-drawer__locations-label">AVAILABLE AT</p>
+                <div class="mn-drawer__location-list">
+                    <div class="mn-drawer__location-item">
+                        <span class="mn-drawer__location-dot"></span>
+                        <div>
+                            <p class="mn-drawer__location-name">DLF Cyberpark</p>
+                            <p class="mn-drawer__location-sub">Phase III, Udyog Vihar, Gurugram</p>
+                        </div>
+                    </div>
+                    <div class="mn-drawer__location-item">
+                        <span class="mn-drawer__location-dot"></span>
+                        <div>
+                            <p class="mn-drawer__location-name">Sharda University</p>
+                            <p class="mn-drawer__location-sub">Knowledge Park III, Greater Noida</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mn-drawer__footer">
+                <span class="mn-drawer__price" id="mnDrawerPrice"></span>
+                <a href="/menu.html" class="mn-drawer__order-btn">ORDER NOW →</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- ── FOOTER ─────────────────────────────────────────────────────── -->
+    <footer class="site-footer">
+        <div class="site-footer__inner">
+            <div class="site-footer__brand">
+                <img src="/media/Greed_Logo.png" alt="Greed" class="site-footer__logo" />
+                <p class="site-footer__tagline">Specialty coffee for people who want more.</p>
+            </div>
+            <div class="site-footer__col">
+                <h4 class="site-footer__col-title">Explore</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/menu.html">Menu</a></li>
+                    <li><a href="/shop.html">Shop</a></li>
+                    <li><a href="#">Loyalty</a></li>
+                </ul>
+            </div>
+            <div class="site-footer__col">
+                <h4 class="site-footer__col-title">Contact</h4>
+                <ul>
+                    <li><a href="/contact.html">Contact Us</a></li>
+                    <li><a href="/contact.html#partner">Partner with Us</a></li>
+                    <li><a href="/contact.html#bulk">Bulk Orders</a></li>
+                    <li><a href="/contact.html#careers">Careers</a></li>
+                </ul>
+            </div>
+            <div class="site-footer__col">
+                <h4 class="site-footer__col-title">Find Us</h4>
+                <ul>
+                    <li><a href="#">Locations</a></li>
+                    <li><a href="#">Order on Zomato</a></li>
+                    <li><a href="#">Order on WhatsApp</a></li>
+                    <li><a href="#">Order Online</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="site-footer__bottom">
+            <span>© 2025 Greed. All rights reserved.</span>
+            <span>hello@bygreed.com</span>
+        </div>
+    </footer>
+
+    <script type="module" src="./menu.js"></script>
+
+</body>
+
+</html>
