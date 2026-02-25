@@ -12,6 +12,11 @@
     z-index: 200;
 }
 
+/* Base state for toggle button - Hidden on desktop */
+.mn-mobile-filter-toggle {
+    display: none;
+}
+
 
 /* ── HERO ───────────────────────────────────────────────────── */
 .mn-hero {
@@ -1147,6 +1152,54 @@
 }
 
 @media (max-width: 768px) {
+
+    /* MOBILE FILTER TOGGLE */
+    .mn-mobile-filter-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 5%;
+        background: #000;
+        color: #fff;
+        font-family: 'AstyCF', sans-serif;
+        font-size: 16px;
+        text-transform: uppercase;
+        cursor: pointer;
+        border-bottom: 2px solid #000;
+    }
+
+    .mn-mobile-filter-toggle svg {
+        transition: transform 0.3s ease;
+    }
+
+    .mn-mobile-filter-toggle[aria-expanded="true"] svg {
+        transform: rotate(180deg);
+    }
+
+    /* Hide the filter content entirely by default on mobile */
+    .mn-filter-content {
+        display: none;
+        width: 100%;
+        background: #fff;
+    }
+
+    /* The JS class to show it cleanly */
+    .mn-filter-content--open {
+        display: block !important;
+        animation: mnSlideDown 0.3s ease forwards;
+    }
+
+    @keyframes mnSlideDown {
+        0% {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 
     /* Allow the bar items to wrap, but force chips strictly on top */
     .mn-bar {

@@ -289,6 +289,25 @@ const overlay = document.getElementById('mnOverlay');
 const drawer = document.getElementById('mnDrawer');
 const chips = document.getElementById('mnChips');
 const sortSel = document.getElementById('mnSort');
+const filterBtn = document.getElementById('mnFilterBtn');
+const filterContent = document.getElementById('mnFilterContent');
+
+// ── MOBILE FILTER TOGGLE ─────────────────────────────────────────────
+if (filterBtn && filterContent) {
+    filterBtn.addEventListener('click', () => {
+        const isOpen = filterContent.classList.contains('mn-filter-content--open');
+
+        if (isOpen) {
+            filterContent.classList.remove('mn-filter-content--open');
+            filterBtn.setAttribute('aria-expanded', 'false');
+            filterBtn.querySelector('span').textContent = 'Show Filters';
+        } else {
+            filterContent.classList.add('mn-filter-content--open');
+            filterBtn.setAttribute('aria-expanded', 'true');
+            filterBtn.querySelector('span').textContent = 'Hide Filters';
+        }
+    });
+}
 
 // ── ESCAPE BODY TRANSFORM ─────────────────────────────────────────────
 // The <body> has a CSS transform which creates a new containing block,
