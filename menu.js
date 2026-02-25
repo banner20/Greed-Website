@@ -290,19 +290,25 @@ const drawer = document.getElementById('mnDrawer');
 const chips = document.getElementById('mnChips');
 const sortSel = document.getElementById('mnSort');
 const filterBtn = document.getElementById('mnFilterBtn');
+const filterSummary = document.getElementById('mnFilterSummary');
 const filterContent = document.getElementById('mnFilterContent');
 
 // ── MOBILE FILTER TOGGLE ─────────────────────────────────────────────
-if (filterBtn && filterContent) {
-    filterBtn.addEventListener('click', () => {
-        const isOpen = filterContent.classList.contains('mn-filter-content--open');
+if (filterBtn) {
+    const collapsibles = document.querySelectorAll('.mn-collapsible');
 
-        if (isOpen) {
-            filterContent.classList.remove('mn-filter-content--open');
+    filterBtn.addEventListener('click', () => {
+        // Check state by reading aria-expanded
+        const isExpanded = filterBtn.getAttribute('aria-expanded') === 'true';
+
+        if (isExpanded) {
+            // Close them
+            collapsibles.forEach(el => el.classList.remove('mn-collapsible--open'));
             filterBtn.setAttribute('aria-expanded', 'false');
             filterBtn.querySelector('span').textContent = 'Show Filters';
         } else {
-            filterContent.classList.add('mn-filter-content--open');
+            // Open them
+            collapsibles.forEach(el => el.classList.add('mn-collapsible--open'));
             filterBtn.setAttribute('aria-expanded', 'true');
             filterBtn.querySelector('span').textContent = 'Hide Filters';
         }
@@ -393,6 +399,19 @@ function renderGrid() {
 
     // Update count
     countEl.textContent = items.length;
+
+    // Update Mobile Filter Summary
+    if (filterSummary) {
+        let parts = [];
+        if (activeCategory !== 'All') {
+            parts.push(activeCategory);
+        }
+        if (activeChip !== 'all') {
+            const chipCleanNames = { hot: 'Hot', iced: 'Iced', veg: 'Veg', 'non-veg': 'Non-Veg', recommended: "Rec'd" };
+            parts.push(chipCleanNames[activeChip] || activeChip);
+        }
+        filterSummary.textContent = parts.length > 0 ? parts.join(', ') : 'All Items';
+    }
 
     // Update per-tab counts
     CATEGORIES.forEach((cat, i) => {
