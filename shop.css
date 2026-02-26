@@ -8,6 +8,77 @@
     border-bottom: 1.5px solid #000;
 }
 
+/* ── Cart Nav Badge (Shared with cart) ─────────────────────────── */
+.cart-nav-btn {
+    position: relative;
+    font-family: 'Okkult', sans-serif;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: transparent;
+    border: 1.5px solid #000;
+    color: #000;
+    padding: 8px 18px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.cart-nav-btn:hover {
+    background: #000;
+    color: var(--greed-green);
+}
+
+.cart-nav-badge {
+    display: none;
+    background: var(--greed-green);
+    color: #000;
+    font-family: 'AstyCF', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+    line-height: 1;
+}
+
+.cart-nav-btn.right-align {
+    position: absolute;
+    right: 33px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    padding: 8px;
+    color: var(--greed-black);
+}
+
+.cart-nav-btn.right-align:hover {
+    background: transparent;
+    color: var(--greed-green);
+}
+
+.cart-nav-btn.right-align .cart-nav-badge {
+    position: absolute;
+    top: -2px;
+    right: -4px;
+}
+
+.cart-nav-badge.visible {
+    display: inline-flex;
+}
+
+@media (max-width: 768px) {
+    .cart-nav-btn.right-align {
+        right: 80px;
+    }
+}
+
 /* ── HERO ─────────────────────────────────────────────────────── */
 .sh-hero {
     display: grid;
@@ -679,6 +750,55 @@
     color: #000;
 }
 
+/* ── Shop Cart Stepper ───────────────────────────────────────── */
+.sh-cart-controls {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sh-cart-controls .cart-qty {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    border: 2px solid #000;
+    height: 47px;
+    /* matches Add button padding+line-height ~47px */
+}
+
+.sh-cart-controls .cart-qty__btn {
+    width: 45px;
+    height: 100%;
+    background: transparent;
+    border: none;
+    font-family: 'Okkult', sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s, color 0.15s;
+    color: #000;
+}
+
+.sh-cart-controls .cart-qty__btn:hover {
+    background: #000;
+    color: var(--greed-green);
+}
+
+.sh-cart-controls .cart-qty__val {
+    width: 48px;
+    text-align: center;
+    font-family: 'Okkult', sans-serif;
+    font-size: 18px;
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+    height: 100%;
+    line-height: 43px;
+    /* account for 4px borders */
+    background: #fff;
+    color: #000;
+}
+
 /* ── Quality Statement ───────────────────────────────────────── */
 .sh-statement {
     background: #000;
@@ -750,6 +870,14 @@
     margin-top: 6px;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+}
+
+.sh-placeholder-box {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    background-color: #333333;
+    border: 1.5px solid #000;
 }
 
 /* ── Bottom CTA ──────────────────────────────────────────────── */

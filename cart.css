@@ -380,6 +380,27 @@
     line-height: 1;
 }
 
+.cart-nav-btn.right-align {
+    position: absolute;
+    right: 33px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    padding: 8px;
+    color: var(--greed-black);
+}
+
+.cart-nav-btn.right-align:hover {
+    background: transparent;
+    color: var(--greed-green);
+}
+
+.cart-nav-btn.right-align .cart-nav-badge {
+    position: absolute;
+    top: -2px;
+    right: -4px;
+}
+
 .cart-nav-badge.visible {
     display: inline-flex;
 }
@@ -408,6 +429,12 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+    }
+}
+
+@media (max-width: 768px) {
+    .cart-nav-btn.right-align {
+        right: 80px;
     }
 }
 

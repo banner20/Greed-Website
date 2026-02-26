@@ -61,8 +61,7 @@
                 if (href.length > bestLen) { best = item; bestLen = href.length; }
             }
         });
-        // Fallback: HOME for root
-        if (!best) best = items.find(i => (i.getAttribute('href') || '') === '/') || items[0];
+
         return best;
     }
 
@@ -95,6 +94,9 @@
                 // Mark active item for text color contrast
                 items.forEach(i => i.classList.remove('nav-active'));
                 active.classList.add('nav-active');
+            } else {
+                pill.style.opacity = '0';
+                items.forEach(i => i.classList.remove('nav-active'));
             }
 
             // Remove static `.home` styling — pill handles it now
@@ -118,6 +120,9 @@
             pillTo(active, true);
             items.forEach(i => i.classList.remove('nav-active'));
             active.classList.add('nav-active');
+        } else {
+            pill.style.opacity = '0';
+            items.forEach(i => i.classList.remove('nav-active'));
         }
     });
 

@@ -79,10 +79,12 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('storage', syncBadge);
     window.addEventListener('greed:cart-updated', syncBadge);
 
-    /* ── Shop page: wire "Add to Cart" buttons ─────────────────── */
-    document.querySelectorAll('.sh-add-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const product = btn.closest('.sh-product');
+    /* ── Shop page: wire "Add to Cart" buttons & Steppers ───────── */
+    document.addEventListener('click', (e) => {
+        // Add to Cart
+        const addBtn = e.target.closest('.sh-add-btn');
+        if (addBtn) {
+            const product = addBtn.closest('.sh-product');
             if (!product) return;
 
             const id = product.dataset.productId;
@@ -93,19 +95,29 @@ document.addEventListener('DOMContentLoaded', () => {
             const thumb = product.dataset.thumb || 'bean';
 
             addToCart({ id, name, price, weight, roast, thumb });
+            if (typeof renderShopButtons === 'function') renderShopButtons();
+        }
 
-            // Visual feedback
-            const original = btn.textContent;
-            btn.textContent = '✓ Added';
-            btn.style.background = 'var(--greed-green)';
-            btn.style.color = '#000';
-            setTimeout(() => {
-                btn.textContent = original;
-                btn.style.background = '';
-                btn.style.color = '';
-            }, 1400);
-        });
+        // Shop Stepper Actions
+        const shopQtyBtn = e.target.closest('.cart-qty__btn[data-shop-action]');
+        if (shopQtyBtn) {
+            const id = shopQtyBtn.dataset.id;
+            const action = shopQtyBtn.dataset.shopAction;
+            if (action === 'inc') {
+                updateQty(id, 1);
+            } else if (action === 'dec') {
+                const item = getCart().find(i => i.id === id);
+                if (item && item.qty === 1) removeItem(id);
+                else updateQty(id, -1);
+            }
+            if (typeof renderShopButtons === 'function') renderShopButtons();
+        }
     });
+
+    if (document.querySelector('.sh-product')) {
+        renderShopButtons();
+        window.addEventListener('greed:cart-updated', renderShopButtons);
+    }
 
     /* ── Cart page: render items ──────────────────────────────── */
     if (document.querySelector('.cart-items-wrap')) {
@@ -113,6 +125,42 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('greed:cart-updated', renderCartPage);
     }
 });
+
+/* ── Shop Page Renderer ─────────────────────────────────────────── */
+function renderShopButtons() {
+    const cart = getCart();
+    document.querySelectorAll('.sh-product').forEach(product => {
+        const id = product.dataset.productId;
+        const footer = product.querySelector('.sh-product__footer');
+        if (!footer) return;
+
+        let container = footer.querySelector('.sh-cart-controls');
+        if (!container) {
+            container = document.createElement('div');
+            container.className = 'sh-cart-controls';
+            footer.appendChild(container);
+        }
+
+        const item = cart.find(i => i.id === id);
+        const addBtn = footer.querySelector('.sh-add-btn');
+
+        if (item && item.qty > 0) {
+            container.innerHTML = `
+                <div class="cart-qty">
+                    <button class="cart-qty__btn" data-shop-action="dec" data-id="${id}">−</button>
+                    <span class="cart-qty__val">${item.qty}</span>
+                    <button class="cart-qty__btn" data-shop-action="inc" data-id="${id}">+</button>
+                </div>
+            `;
+            container.style.display = 'block';
+            if (addBtn) addBtn.style.display = 'none';
+        } else {
+            container.style.display = 'none';
+            container.innerHTML = '';
+            if (addBtn) addBtn.style.display = ''; // Restore default
+        }
+    });
+}
 
 /* ── Cart Page Renderer ─────────────────────────────────────────── */
 function renderCartPage() {
